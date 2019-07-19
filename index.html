@@ -256,25 +256,10 @@
           <div class="col-md-12 text-center" style="height: 300px;">
             <!-- <h2 class="title" style="font-size: 3em;margin-top:0px;color:#1a1a1a;">Location</h2> -->
             <!-- <p> -->
-            <div id="map" style="margin-top: 0px;"></div>
-            <script>
-              var map;
-              function initMap() {
-
-                map = new google.maps.Map(document.getElementById('map'), {
-                  center: { lat: 17.0021126, lng: 96.0924138 },
-                  zoom: 15
-                });
-
-                var marker = new google.maps.Marker({
-                  position: { lat: 17.0021126, lng: 96.0924138 },
-                  map: map,
-                  title: 'We are here!'
-                });
-              }
-            </script>
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcY7YyYfWLNVz_mD9qLmpR3i8RV71KIvk&callback=initMap" async
-              defer></script>
+            <div id="map" style="margin-top: 0px;">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3815.439221464106!2d96.09022511487093!3d17.002112588310535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c1978daaea2ae7%3A0xc20eef5e24c4075!2sUniversity+Of+Computer+Studies%2C+Yangon.!5e0!3m2!1sen!2smm!4v1563562068114!5m2!1sen!2smm" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+            
 
             <!-- </p> -->
 
