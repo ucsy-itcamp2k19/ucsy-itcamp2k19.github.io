@@ -13,11 +13,11 @@ class Controller {
     }
 
     init() {
-        console.log("fjeoieo");
+        // console.log("fjeoieo");
         this.scheduleListModel.fetchAllSchedule()
             .then((data) => {
 
-                console.log(data)
+                // console.log(typeof data);
                 this.getAllScheduleData(data)
                 this.displayScheduleList(data)
             })
@@ -37,9 +37,12 @@ class Controller {
 
     getAllScheduleData(data) {
         this.scheduleObjects = [];
-        
-        for (let schedule of Object.values(data)) {
+        // console.log(typeof data);
+        console.log( data.sessionList);
+        Object.keys(data).forEach((key,index)=>{
+            for (let schedule of data[key]) {
             // console.log("getAllData"+"\t"+ schedule.topic_name)
+            console.log( schedule);
             const scheduleObj = new ScheduleItemModel(
                 schedule.session_id,
                 schedule.topic_name,
@@ -51,9 +54,10 @@ class Controller {
             )
 
             this.scheduleObjects.push(scheduleObj);
-
             
         }
+        })
+        
 
         return this.scheduleObjects;
     }

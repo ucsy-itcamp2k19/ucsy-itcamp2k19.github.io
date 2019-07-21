@@ -13,7 +13,7 @@ class ScheduleListModel extends APIDataModel{
             return response.json();
         }).then(function(json){
             console.log(json);
-            return Object.values(json);
+            return json;
         })
     }
 
