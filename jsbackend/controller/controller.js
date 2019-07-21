@@ -26,10 +26,14 @@ class Controller {
 
     displayScheduleList(scheduleObjects) {
         const templates = [];
-        for (let scheduleObj in Object.values(scheduleObjects)) {
-            templates.push(this.scheduleListView.getItemTemplate(scheduleObj[0]));
-        }
-
+        // console.log(scheduleObjects);
+        Object.keys(scheduleObjects).forEach((key,index)=>{
+            for (let scheduleObj of scheduleObjects[key]) {
+                console.log(scheduleObj.topic_name);
+                templates.push(this.scheduleListView.getItemTemplate(scheduleObj));
+            }
+        })
+        
         this.scheduleListView.render(templates);
     }
 
@@ -42,7 +46,7 @@ class Controller {
         Object.keys(data).forEach((key,index)=>{
             for (let schedule of data[key]) {
             // console.log("getAllData"+"\t"+ schedule.topic_name)
-            console.log( schedule);
+            // console.log( schedule);
             const scheduleObj = new ScheduleItemModel(
                 schedule.session_id,
                 schedule.topic_name,
@@ -54,7 +58,7 @@ class Controller {
             )
 
             this.scheduleObjects.push(scheduleObj);
-            
+            // console.log(scheduleObj);
         }
         })
         

@@ -28,7 +28,7 @@ class ScheduleListView {
     //     return templates;
     // }
 
-    getItemTemplate(scheduleObj) {
+    getItemTemplate(scheduleObject) {
 
         // const result = this.itemTemplate
         //         .replace("{{this.session_id}}", scheduleObj.session_id)
@@ -41,8 +41,8 @@ class ScheduleListView {
         // return result;
 
         let template = [];
-        for (const scheduleObject of Object(scheduleObj)) {
-            const result = this.itemTemplate
+        console.log(scheduleObject);
+        const result = this.itemTemplate
                 .replace("{{this.session_id}}", scheduleObject.session_id)
                 .replace("{{this.topic_name}}", scheduleObject.topic_name)
                 .replace("{{this.speaker_name}}", scheduleObject.speaker_name)
@@ -52,7 +52,18 @@ class ScheduleListView {
                 .replace("{{this.time_id}}", scheduleObject.time_id)
 
             template.push(result);
-        }
+        // for (const scheduleObject of Object(scheduleObj)) {
+            // const result = this.itemTemplate
+            //     .replace("{{this.session_id}}", scheduleObject.session_id)
+            //     .replace("{{this.topic_name}}", scheduleObject.topic_name)
+            //     .replace("{{this.speaker_name}}", scheduleObject.speaker_name)
+            //     .replace("{{this.speaker_profile}}", scheduleObject.speaker_profile)
+            //     .replace("{{this.session_place}}", scheduleObject.session_place)
+            //     .replace("{{this.share_file}}", scheduleObject.share_file)
+            //     .replace("{{this.time_id}}", scheduleObject.time_id)
+
+            // template.push(result);
+        // }
 
         return template;
 
@@ -61,8 +72,9 @@ class ScheduleListView {
 
     render(templates) {
         this.s1viewport.innerHTML = "";
+        console.log(templates);
         for (let template of templates) {
-            console.log(template)
+            // console.log(template)
             this.s1viewport.innerHTML += template;
         }
     }
