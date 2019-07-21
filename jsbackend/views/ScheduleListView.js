@@ -41,7 +41,7 @@ class ScheduleListView {
         // return result;
 
         let template = [];
-        console.log(scheduleObject);
+        // console.log(scheduleObject);
         const result = this.itemTemplate
                 .replace("{{this.session_id}}", scheduleObject.session_id)
                 .replace("{{this.topic_name}}", scheduleObject.topic_name)
@@ -74,8 +74,44 @@ class ScheduleListView {
         this.s1viewport.innerHTML = "";
         console.log(templates);
         for (let template of templates) {
-            // console.log(template)
+            console.log("RENDER1"+template)
             this.s1viewport.innerHTML += template;
+        }
+    }
+
+    render2(templates) {
+        this.s2viewport.innerHTML = "";
+        console.log(templates);
+        for (let template of templates) {
+            console.log("RENDER2"+template)
+            this.s2viewport.innerHTML += template;
+        }
+    }
+
+    render3(templates) {
+        this.s3viewport.innerHTML = "";
+        console.log(templates);
+        for (let template of templates) {
+            console.log("RENDER3"+template)
+            this.s3viewport.innerHTML += template;
+        }
+    }
+
+    render4(templates) {
+        this.s4viewport.innerHTML = "";
+        console.log(templates);
+        for (let template of templates) {
+            console.log("RENDER4"+template)
+            this.s4viewport.innerHTML += template;
+        }
+    }
+
+    render5(templates) {
+        this.s5viewport.innerHTML = "";
+        console.log(templates);
+        for (let template of templates) {
+            console.log("RENDER5"+template)
+            this.s5viewport.innerHTML += template;
         }
     }
 
